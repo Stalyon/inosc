@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.stalyon"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "inosc",
+    "packageName": "com.stalyon",
+    "packageFolder": "com/stalyon",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZmRjZjdkNGMzNGU1YmZiM2U1NDRlNmYyY2RmZTVhNDU0ZTgyZmMxN2UxYzQ4OGFiZGQzZTA0NGZhNzM5ZTQ2Mzk2NDM1MDkyZDIyYmUwNWMxYWMxNjE3YTRlMTU2ZTQ1MTFkNzU5ZTEwNjkwNzMxNzQwMDFhYmQwZGFlNDgzOGY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1587723280475,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}

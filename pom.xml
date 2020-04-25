@@ -54,6 +54,7 @@
         https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies/${spring-boot.version} -->
         <liquibase.version>3.8.7</liquibase.version>
         <liquibase-hibernate5.version>3.8</liquibase-hibernate5.version>
+        <h2.version>1.4.200</h2.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <jaxb-runtime.version>2.3.2</jaxb-runtime.version>
         <archunit-junit5.version>0.13.1</archunit-junit5.version>
@@ -157,6 +158,14 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sabomichal</groupId>
+            <artifactId>liquibase-mssql</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
             <scope>provided</scope>
@@ -178,10 +187,6 @@
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -611,12 +616,12 @@
                     <configuration>
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
-                        <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://localhost:5432/inosc</url>
+                        <driver>org.h2.Driver</driver>
+                        <url>jdbc:h2:file:${project.build.directory}/h2db/db/inosc</url>
                         <defaultSchemaName></defaultSchemaName>
                         <username>inosc</username>
                         <password></password>
-                        <referenceUrl>hibernate:spring:com.stalyon.domain?dialect=io.github.jhipster.domain.util.FixedPostgreSQL10Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+                        <referenceUrl>hibernate:spring:com.stalyon.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>
                         <contexts>!test</contexts>
@@ -648,9 +653,9 @@
                             <version>${javassist.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>io.github.jhipster</groupId>
-                            <artifactId>jhipster-framework</artifactId>
-                            <version>${jhipster-dependencies.version}</version>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -849,6 +854,10 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                </dependency>
             </dependencies>
             <build>
                 <plugins>
@@ -909,6 +918,10 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-devtools</artifactId>
                     <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
                 </dependency>
             </dependencies>
             <properties>

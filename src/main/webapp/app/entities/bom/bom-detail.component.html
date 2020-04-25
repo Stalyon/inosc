@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="bom">
+            <h2><span>Bom</span> {{ bom.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Item Number</span></dt>
+                <dd>
+                    <span>{{ bom.itemNumber }}</span>
+                </dd>
+                <dt><span>Bom Operation Number</span></dt>
+                <dd>
+                    <span>{{ bom.bomOperationNumber }}</span>
+                </dd>
+                <dt><span>Bom Sequence Number</span></dt>
+                <dd>
+                    <span>{{ bom.bomSequenceNumber }}</span>
+                </dd>
+                <dt><span>Component Number</span></dt>
+                <dd>
+                    <span>{{ bom.componentNumber }}</span>
+                </dd>
+                <dt><span>Quantity</span></dt>
+                <dd>
+                    <span>{{ bom.quantity }}</span>
+                </dd>
+                <dt><span>Bom Yield</span></dt>
+                <dd>
+                    <span>{{ bom.bomYield }}</span>
+                </dd>
+                <dt><span>Eff Date</span></dt>
+                <dd>
+                    <span>{{ bom.effDate }}</span>
+                </dd>
+                <dt><span>Dis Date</span></dt>
+                <dd>
+                    <span>{{ bom.disDate }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/bom', bom.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

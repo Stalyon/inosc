@@ -1,0 +1,146 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-mvt-stk-heading">Create or edit a Mvt Stk</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateMvt">Date Mvt</label>
+                    <div class="input-group">
+                        <input id="field_dateMvt" type="text" class="form-control" name="dateMvt" ngbDatepicker #dateMvtDp="ngbDatepicker" formControlName="dateMvt"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateMvtDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateMvt')!.invalid && (editForm.get('dateMvt')!.dirty || editForm.get('dateMvt')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateMvt')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_codeMvt">Code Mvt</label>
+                    <input type="text" class="form-control" name="codeMvt" id="field_codeMvt"
+                           formControlName="codeMvt"/>
+                    <div *ngIf="editForm.get('codeMvt')!.invalid && (editForm.get('codeMvt')!.dirty || editForm.get('codeMvt')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codeMvt')?.errors?.maxlength">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemNumber">Item Number</label>
+                    <input type="text" class="form-control" name="itemNumber" id="field_itemNumber"
+                           formControlName="itemNumber"/>
+                    <div *ngIf="editForm.get('itemNumber')!.invalid && (editForm.get('itemNumber')!.dirty || editForm.get('itemNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemNumber')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemNumber')?.errors?.maxlength">
+                        This field cannot be longer than 18 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_magasin">Magasin</label>
+                    <input type="text" class="form-control" name="magasin" id="field_magasin"
+                           formControlName="magasin"/>
+                    <div *ngIf="editForm.get('magasin')!.invalid && (editForm.get('magasin')!.dirty || editForm.get('magasin')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('magasin')?.errors?.maxlength">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_emplacement">Emplacement</label>
+                    <input type="text" class="form-control" name="emplacement" id="field_emplacement"
+                           formControlName="emplacement"/>
+                    <div *ngIf="editForm.get('emplacement')!.invalid && (editForm.get('emplacement')!.dirty || editForm.get('emplacement')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('emplacement')?.errors?.maxlength">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_qte">Qte</label>
+                    <input type="number" class="form-control" name="qte" id="field_qte"
+                           formControlName="qte"/>
+                    <div *ngIf="editForm.get('qte')!.invalid && (editForm.get('qte')!.dirty || editForm.get('qte')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qte')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qte')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numOrdre">Num Ordre</label>
+                    <input type="text" class="form-control" name="numOrdre" id="field_numOrdre"
+                           formControlName="numOrdre"/>
+                    <div *ngIf="editForm.get('numOrdre')!.invalid && (editForm.get('numOrdre')!.dirty || editForm.get('numOrdre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('numOrdre')?.errors?.maxlength">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numLigneOrdre">Num Ligne Ordre</label>
+                    <input type="text" class="form-control" name="numLigneOrdre" id="field_numLigneOrdre"
+                           formControlName="numLigneOrdre"/>
+                    <div *ngIf="editForm.get('numLigneOrdre')!.invalid && (editForm.get('numLigneOrdre')!.dirty || editForm.get('numLigneOrdre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('numLigneOrdre')?.errors?.maxlength">
+                        This field cannot be longer than 4 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotNumber">Lot Number</label>
+                    <input type="text" class="form-control" name="lotNumber" id="field_lotNumber"
+                           formControlName="lotNumber"/>
+                    <div *ngIf="editForm.get('lotNumber')!.invalid && (editForm.get('lotNumber')!.dirty || editForm.get('lotNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lotNumber')?.errors?.maxlength">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

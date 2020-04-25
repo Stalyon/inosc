@@ -1,0 +1,269 @@
+<div>
+    <h2 id="page-heading">
+        <span>Items</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-item" [routerLink]="['/item/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Item
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="items?.length === 0">
+        <span>No items found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="items?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Organization Code</span></th>
+                    <th scope="col" ><span>Business Unit</span></th>
+                    <th scope="col" ><span>Business Unit Description</span></th>
+                    <th scope="col" ><span>Business Field</span></th>
+                    <th scope="col" ><span>Business Field Description</span></th>
+                    <th scope="col" ><span>Business Line</span></th>
+                    <th scope="col" ><span>Business Line Description</span></th>
+                    <th scope="col" ><span>Workcenter</span></th>
+                    <th scope="col" ><span>Product Group</span></th>
+                    <th scope="col" ><span>Product Group Description</span></th>
+                    <th scope="col" ><span>Product Category</span></th>
+                    <th scope="col" ><span>Product Category Description</span></th>
+                    <th scope="col" ><span>Product Line</span></th>
+                    <th scope="col" ><span>Product Line Description</span></th>
+                    <th scope="col" ><span>Product Line Manager</span></th>
+                    <th scope="col" ><span>Product Division</span></th>
+                    <th scope="col" ><span>Product Category Manager</span></th>
+                    <th scope="col" ><span>Plant Category</span></th>
+                    <th scope="col" ><span>Item Type</span></th>
+                    <th scope="col" ><span>Primary Unit Of Measure</span></th>
+                    <th scope="col" ><span>Item Number</span></th>
+                    <th scope="col" ><span>Item Description</span></th>
+                    <th scope="col" ><span>Inventory Item Status Code</span></th>
+                    <th scope="col" ><span>Planning Make Or Buy Code</span></th>
+                    <th scope="col" ><span>Item Planner Code</span></th>
+                    <th scope="col" ><span>Planner Name</span></th>
+                    <th scope="col" ><span>Mrp Planning Method</span></th>
+                    <th scope="col" ><span>Inventory Planning Method</span></th>
+                    <th scope="col" ><span>Lead Time Lot Size</span></th>
+                    <th scope="col" ><span>Fixed Lead Time</span></th>
+                    <th scope="col" ><span>Fixed Order Quanitiy</span></th>
+                    <th scope="col" ><span>Fixed Lot Multiplier</span></th>
+                    <th scope="col" ><span>Current Safety Stock Quantity</span></th>
+                    <th scope="col" ><span>Demand Time Fence</span></th>
+                    <th scope="col" ><span>Demand Time Fence Days</span></th>
+                    <th scope="col" ><span>Fixed Days Supply</span></th>
+                    <th scope="col" ><span>Frozen Item Cost</span></th>
+                    <th scope="col" ><span>Frozen Material Cost</span></th>
+                    <th scope="col" ><span>Max Minmax Quantity</span></th>
+                    <th scope="col" ><span>Min Minmax Quantity</span></th>
+                    <th scope="col" ><span>Order Quantity Max</span></th>
+                    <th scope="col" ><span>Order Quantity Min</span></th>
+                    <th scope="col" ><span>Planning Time Fence Days</span></th>
+                    <th scope="col" ><span>Postprocessing Lead Time</span></th>
+                    <th scope="col" ><span>Preprocessing Lead Time</span></th>
+                    <th scope="col" ><span>Processing Lead Time</span></th>
+                    <th scope="col" ><span>Mdm Go H Category</span></th>
+                    <th scope="col" ><span>Resource Name</span></th>
+                    <th scope="col" ><span>Usage Rate</span></th>
+                    <th scope="col" ><span>Asl Vmi Enabled</span></th>
+                    <th scope="col" ><span>Asl Consigned From Supplier</span></th>
+                    <th scope="col" ><span>Asl Supplier</span></th>
+                    <th scope="col" ><span>Asl Supplier Number</span></th>
+                    <th scope="col" ><span>Aslsupplier Site</span></th>
+                    <th scope="col" ><span>Asl Supplier Item</span></th>
+                    <th scope="col" ><span>Aslpurchasing Uom</span></th>
+                    <th scope="col" ><span>Sl Process Code Detail</span></th>
+                    <th scope="col" ><span>Sl Effective From Date</span></th>
+                    <th scope="col" ><span>Receipt Routing Detail</span></th>
+                    <th scope="col" ><span>Vmi Planning Party</span></th>
+                    <th scope="col" ><span>List Price</span></th>
+                    <th scope="col" ><span>Mdm Global Id</span></th>
+                    <th scope="col" ><span>Mdm Article Number Ygart</span></th>
+                    <th scope="col" ><span>Lot Control</span></th>
+                    <th scope="col" ><span>Shelf Life Control</span></th>
+                    <th scope="col" ><span>Shelf Life Days</span></th>
+                    <th scope="col" ><span>Serial Number Control</span></th>
+                    <th scope="col" ><span>Unit Volume</span></th>
+                    <th scope="col" ><span>Volume Unit Of Measure</span></th>
+                    <th scope="col" ><span>Unit Weight</span></th>
+                    <th scope="col" ><span>Weight Unit Of Measure</span></th>
+                    <th scope="col" ><span>Units In A Box Package</span></th>
+                    <th scope="col" ><span>Revision Control</span></th>
+                    <th scope="col" ><span>Dimension Unit Height</span></th>
+                    <th scope="col" ><span>Dimension Unit Length</span></th>
+                    <th scope="col" ><span>Dimension Unit Width</span></th>
+                    <th scope="col" ><span>Dimension Unit Of Measure</span></th>
+                    <th scope="col" ><span>Hazardous Weight</span></th>
+                    <th scope="col" ><span>France Abc Picking Category</span></th>
+                    <th scope="col" ><span>Mdm Temp Conditions Category</span></th>
+                    <th scope="col" ><span>Perish Code Category</span></th>
+                    <th scope="col" ><span>Un Number</span></th>
+                    <th scope="col" ><span>Hazard Class</span></th>
+                    <th scope="col" ><span>Unit Of Issue</span></th>
+                    <th scope="col" ><span>Rounding Factor</span></th>
+                    <th scope="col" ><span>Item Buyer Name</span></th>
+                    <th scope="col" ><span>Hazardous Weight Uom</span></th>
+                    <th scope="col" ><span>Gph Code</span></th>
+                    <th scope="col" ><span>Mos</span></th>
+                    <th scope="col" ><span>Lpn Package</span></th>
+                    <th scope="col" ><span>Qte Unitaire Palette</span></th>
+                    <th scope="col" ><span>Type Um</span></th>
+                    <th scope="col" ><span>Hauteur Um</span></th>
+                    <th scope="col" ><span>Longueur Um</span></th>
+                    <th scope="col" ><span>Largeur Um</span></th>
+                    <th scope="col" ><span>Qte Unitaire Carton</span></th>
+                    <th scope="col" ><span>Dimensions Uc</span></th>
+                    <th scope="col" ><span>Specifications</span></th>
+                    <th scope="col" ><span>Cadence Poste</span></th>
+                    <th scope="col" ><span>Pfse</span></th>
+                    <th scope="col" ><span>Rhenus</span></th>
+                    <th scope="col" ><span>Test Capa</span></th>
+                    <th scope="col" ><span>Abc</span></th>
+                    <th scope="col" ><span>Item Creation Date</span></th>
+                    <th scope="col" ><span>Categorie Nm</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items ;trackBy: trackId">
+                    <td><a [routerLink]="['/item', item.id, 'view']">{{ item.id }}</a></td>
+                    <td>{{ item.organizationCode }}</td>
+                    <td>{{ item.businessUnit }}</td>
+                    <td>{{ item.businessUnitDescription }}</td>
+                    <td>{{ item.businessField }}</td>
+                    <td>{{ item.businessFieldDescription }}</td>
+                    <td>{{ item.businessLine }}</td>
+                    <td>{{ item.businessLineDescription }}</td>
+                    <td>{{ item.workcenter }}</td>
+                    <td>{{ item.productGroup }}</td>
+                    <td>{{ item.productGroupDescription }}</td>
+                    <td>{{ item.productCategory }}</td>
+                    <td>{{ item.productCategoryDescription }}</td>
+                    <td>{{ item.productLine }}</td>
+                    <td>{{ item.productLineDescription }}</td>
+                    <td>{{ item.productLineManager }}</td>
+                    <td>{{ item.productDivision }}</td>
+                    <td>{{ item.productCategoryManager }}</td>
+                    <td>{{ item.plantCategory }}</td>
+                    <td>{{ item.itemType }}</td>
+                    <td>{{ item.primaryUnitOfMeasure }}</td>
+                    <td>{{ item.itemNumber }}</td>
+                    <td>{{ item.itemDescription }}</td>
+                    <td>{{ item.inventoryItemStatusCode }}</td>
+                    <td>{{ item.planningMakeOrBuyCode }}</td>
+                    <td>{{ item.itemPlannerCode }}</td>
+                    <td>{{ item.plannerName }}</td>
+                    <td>{{ item.mrpPlanningMethod }}</td>
+                    <td>{{ item.inventoryPlanningMethod }}</td>
+                    <td>{{ item.leadTimeLotSize }}</td>
+                    <td>{{ item.fixedLeadTime }}</td>
+                    <td>{{ item.fixedOrderQuanitiy }}</td>
+                    <td>{{ item.fixedLotMultiplier }}</td>
+                    <td>{{ item.currentSafetyStockQuantity }}</td>
+                    <td>{{ item.demandTimeFence }}</td>
+                    <td>{{ item.demandTimeFenceDays }}</td>
+                    <td>{{ item.fixedDaysSupply }}</td>
+                    <td>{{ item.frozenItemCost }}</td>
+                    <td>{{ item.frozenMaterialCost }}</td>
+                    <td>{{ item.maxMinmaxQuantity }}</td>
+                    <td>{{ item.minMinmaxQuantity }}</td>
+                    <td>{{ item.orderQuantityMax }}</td>
+                    <td>{{ item.orderQuantityMin }}</td>
+                    <td>{{ item.planningTimeFenceDays }}</td>
+                    <td>{{ item.postprocessingLeadTime }}</td>
+                    <td>{{ item.preprocessingLeadTime }}</td>
+                    <td>{{ item.processingLeadTime }}</td>
+                    <td>{{ item.mdmGoHCategory }}</td>
+                    <td>{{ item.resourceName }}</td>
+                    <td>{{ item.usageRate }}</td>
+                    <td>{{ item.aslVmiEnabled }}</td>
+                    <td>{{ item.aslConsignedFromSupplier }}</td>
+                    <td>{{ item.aslSupplier }}</td>
+                    <td>{{ item.aslSupplierNumber }}</td>
+                    <td>{{ item.aslsupplierSite }}</td>
+                    <td>{{ item.aslSupplierItem }}</td>
+                    <td>{{ item.aslpurchasingUom }}</td>
+                    <td>{{ item.slProcessCodeDetail }}</td>
+                    <td>{{ item.slEffectiveFromDate | date:'mediumDate' }}</td>
+                    <td>{{ item.receiptRoutingDetail }}</td>
+                    <td>{{ item.vmiPlanningParty }}</td>
+                    <td>{{ item.listPrice }}</td>
+                    <td>{{ item.mdmGlobalId }}</td>
+                    <td>{{ item.mdmArticleNumberYgart }}</td>
+                    <td>{{ item.lotControl }}</td>
+                    <td>{{ item.shelfLifeControl }}</td>
+                    <td>{{ item.shelfLifeDays }}</td>
+                    <td>{{ item.serialNumberControl }}</td>
+                    <td>{{ item.unitVolume }}</td>
+                    <td>{{ item.volumeUnitOfMeasure }}</td>
+                    <td>{{ item.unitWeight }}</td>
+                    <td>{{ item.weightUnitOfMeasure }}</td>
+                    <td>{{ item.unitsInABoxPackage }}</td>
+                    <td>{{ item.revisionControl }}</td>
+                    <td>{{ item.dimensionUnitHeight }}</td>
+                    <td>{{ item.dimensionUnitLength }}</td>
+                    <td>{{ item.dimensionUnitWidth }}</td>
+                    <td>{{ item.dimensionUnitOfMeasure }}</td>
+                    <td>{{ item.hazardousWeight }}</td>
+                    <td>{{ item.franceAbcPickingCategory }}</td>
+                    <td>{{ item.mdmTempConditionsCategory }}</td>
+                    <td>{{ item.perishCodeCategory }}</td>
+                    <td>{{ item.unNumber }}</td>
+                    <td>{{ item.hazardClass }}</td>
+                    <td>{{ item.unitOfIssue }}</td>
+                    <td>{{ item.roundingFactor }}</td>
+                    <td>{{ item.itemBuyerName }}</td>
+                    <td>{{ item.hazardousWeightUom }}</td>
+                    <td>{{ item.gphCode }}</td>
+                    <td>{{ item.mos }}</td>
+                    <td>{{ item.lpnPackage }}</td>
+                    <td>{{ item.qteUnitairePalette }}</td>
+                    <td>{{ item.typeUm }}</td>
+                    <td>{{ item.hauteurUm }}</td>
+                    <td>{{ item.longueurUm }}</td>
+                    <td>{{ item.largeurUm }}</td>
+                    <td>{{ item.qteUnitaireCarton }}</td>
+                    <td>{{ item.dimensionsUc }}</td>
+                    <td>{{ item.specifications }}</td>
+                    <td>{{ item.cadencePoste }}</td>
+                    <td>{{ item.pfse }}</td>
+                    <td>{{ item.rhenus }}</td>
+                    <td>{{ item.testCapa }}</td>
+                    <td>{{ item.abc }}</td>
+                    <td>{{ item.itemCreationDate | date:'mediumDate' }}</td>
+                    <td>{{ item.categorieNm }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/item', item.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/item', item.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(item)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

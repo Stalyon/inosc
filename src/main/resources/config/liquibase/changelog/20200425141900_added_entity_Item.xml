@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Item.
+    -->
+    <changeSet id="20200425141900-1" author="jhipster">
+        <createTable tableName="item">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="organization_code" type="varchar(3)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_unit" type="varchar(7)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_unit_description" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_field" type="varchar(6)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_field_description" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_line" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_line_description" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="workcenter" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_group" type="varchar(7)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_group_description" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_category" type="varchar(3)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_category_description" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_line" type="varchar(2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_line_description" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_line_manager" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_division" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="product_category_manager" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="plant_category" type="varchar(2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_type" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+            <column name="primary_unit_of_measure" type="varchar(2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_number" type="varchar(18)">
+                <constraints nullable="false" />
+            </column>
+            <column name="item_description" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="inventory_item_status_code" type="varchar(8)">
+                <constraints nullable="true" />
+            </column>
+            <column name="planning_make_or_buy_code" type="varchar(4)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_planner_code" type="varchar(4)">
+                <constraints nullable="true" />
+            </column>
+            <column name="planner_name" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mrp_planning_method" type="varchar(15)">
+                <constraints nullable="true" />
+            </column>
+            <column name="inventory_planning_method" type="varchar(16)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lead_time_lot_size" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fixed_lead_time" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fixed_order_quanitiy" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fixed_lot_multiplier" type="varchar(8)">
+                <constraints nullable="true" />
+            </column>
+            <column name="current_safety_stock_quantity" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="demand_time_fence" type="varchar(12)">
+                <constraints nullable="true" />
+            </column>
+            <column name="demand_time_fence_days" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fixed_days_supply" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="frozen_item_cost" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="frozen_material_cost" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="max_minmax_quantity" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="min_minmax_quantity" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_quantity_max" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_quantity_min" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="planning_time_fence_days" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="postprocessing_lead_time" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="preprocessing_lead_time" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="processing_lead_time" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="mdm_go_h_category" type="varchar(12)">
+                <constraints nullable="true" />
+            </column>
+            <column name="resource_name" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="usage_rate" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="asl_vmi_enabled" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+            <column name="asl_consigned_from_supplier" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+            <column name="asl_supplier" type="varchar(60)">
+                <constraints nullable="true" />
+            </column>
+            <column name="asl_supplier_number" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aslsupplier_site" type="varchar(8)">
+                <constraints nullable="true" />
+            </column>
+            <column name="asl_supplier_item" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="aslpurchasing_uom" type="varchar(3)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sl_process_code_detail" type="varchar(25)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sl_effective_from_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="receipt_routing_detail" type="varchar(25)">
+                <constraints nullable="true" />
+            </column>
+            <column name="vmi_planning_party" type="varchar(35)">
+                <constraints nullable="true" />
+            </column>
+            <column name="list_price" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="mdm_global_id" type="varchar(12)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mdm_article_number_ygart" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lot_control" type="varchar(16)">
+                <constraints nullable="true" />
+            </column>
+            <column name="shelf_life_control" type="varchar(28)">
+                <constraints nullable="true" />
+            </column>
+            <column name="shelf_life_days" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="serial_number_control" type="varchar(34)">
+                <constraints nullable="true" />
+            </column>
+            <column name="unit_volume" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="volume_unit_of_measure" type="varchar(3)">
+                <constraints nullable="true" />
+            </column>
+            <column name="unit_weight" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="weight_unit_of_measure" type="varchar(2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="units_in_a_box_package" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="revision_control" type="varchar(6)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dimension_unit_height" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="dimension_unit_length" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="dimension_unit_width" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="dimension_unit_of_measure" type="varchar(2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hazardous_weight" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="france_abc_picking_category" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mdm_temp_conditions_category" type="varchar(3)">
+                <constraints nullable="true" />
+            </column>
+            <column name="perish_code_category" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+            <column name="un_number" type="varchar(6)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hazard_class" type="varchar(4)">
+                <constraints nullable="true" />
+            </column>
+            <column name="unit_of_issue" type="varchar(2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rounding_factor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_buyer_name" type="varchar(40)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hazardous_weight_uom" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gph_code" type="varchar(12)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mos" type="varchar(9)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lpn_package" type="varchar(3)">
+                <constraints nullable="true" />
+            </column>
+            <column name="qte_unitaire_palette" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="type_um" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hauteur_um" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="longueur_um" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="largeur_um" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="qte_unitaire_carton" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="dimensions_uc" type="varchar(18)">
+                <constraints nullable="true" />
+            </column>
+            <column name="specifications" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cadence_poste" type="varchar(5)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pfse" type="varchar(40)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rhenus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="test_capa" type="varchar(8)">
+                <constraints nullable="true" />
+            </column>
+            <column name="abc" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+            <column name="item_creation_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="categorie_nm" type="varchar(30)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200425141900-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200425141900-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/item.csv"
+                  separator=";"
+                  tableName="item">
+            <column name="id" type="numeric"/>
+            <column name="organization_code" type="string"/>
+            <column name="business_unit" type="string"/>
+            <column name="business_unit_description" type="string"/>
+            <column name="business_field" type="string"/>
+            <column name="business_field_description" type="string"/>
+            <column name="business_line" type="string"/>
+            <column name="business_line_description" type="string"/>
+            <column name="workcenter" type="string"/>
+            <column name="product_group" type="string"/>
+            <column name="product_group_description" type="string"/>
+            <column name="product_category" type="string"/>
+            <column name="product_category_description" type="string"/>
+            <column name="product_line" type="string"/>
+            <column name="product_line_description" type="string"/>
+            <column name="product_line_manager" type="string"/>
+            <column name="product_division" type="string"/>
+            <column name="product_category_manager" type="string"/>
+            <column name="plant_category" type="string"/>
+            <column name="item_type" type="string"/>
+            <column name="primary_unit_of_measure" type="string"/>
+            <column name="item_number" type="string"/>
+            <column name="item_description" type="string"/>
+            <column name="inventory_item_status_code" type="string"/>
+            <column name="planning_make_or_buy_code" type="string"/>
+            <column name="item_planner_code" type="string"/>
+            <column name="planner_name" type="string"/>
+            <column name="mrp_planning_method" type="string"/>
+            <column name="inventory_planning_method" type="string"/>
+            <column name="lead_time_lot_size" type="numeric"/>
+            <column name="fixed_lead_time" type="numeric"/>
+            <column name="fixed_order_quanitiy" type="numeric"/>
+            <column name="fixed_lot_multiplier" type="string"/>
+            <column name="current_safety_stock_quantity" type="numeric"/>
+            <column name="demand_time_fence" type="string"/>
+            <column name="demand_time_fence_days" type="numeric"/>
+            <column name="fixed_days_supply" type="numeric"/>
+            <column name="frozen_item_cost" type="numeric"/>
+            <column name="frozen_material_cost" type="numeric"/>
+            <column name="max_minmax_quantity" type="numeric"/>
+            <column name="min_minmax_quantity" type="numeric"/>
+            <column name="order_quantity_max" type="numeric"/>
+            <column name="order_quantity_min" type="numeric"/>
+            <column name="planning_time_fence_days" type="numeric"/>
+            <column name="postprocessing_lead_time" type="numeric"/>
+            <column name="preprocessing_lead_time" type="numeric"/>
+            <column name="processing_lead_time" type="numeric"/>
+            <column name="mdm_go_h_category" type="string"/>
+            <column name="resource_name" type="string"/>
+            <column name="usage_rate" type="numeric"/>
+            <column name="asl_vmi_enabled" type="string"/>
+            <column name="asl_consigned_from_supplier" type="string"/>
+            <column name="asl_supplier" type="string"/>
+            <column name="asl_supplier_number" type="string"/>
+            <column name="aslsupplier_site" type="string"/>
+            <column name="asl_supplier_item" type="string"/>
+            <column name="aslpurchasing_uom" type="string"/>
+            <column name="sl_process_code_detail" type="string"/>
+            <column name="sl_effective_from_date" type="date"/>
+            <column name="receipt_routing_detail" type="string"/>
+            <column name="vmi_planning_party" type="string"/>
+            <column name="list_price" type="numeric"/>
+            <column name="mdm_global_id" type="string"/>
+            <column name="mdm_article_number_ygart" type="string"/>
+            <column name="lot_control" type="string"/>
+            <column name="shelf_life_control" type="string"/>
+            <column name="shelf_life_days" type="numeric"/>
+            <column name="serial_number_control" type="string"/>
+            <column name="unit_volume" type="numeric"/>
+            <column name="volume_unit_of_measure" type="string"/>
+            <column name="unit_weight" type="numeric"/>
+            <column name="weight_unit_of_measure" type="string"/>
+            <column name="units_in_a_box_package" type="numeric"/>
+            <column name="revision_control" type="string"/>
+            <column name="dimension_unit_height" type="numeric"/>
+            <column name="dimension_unit_length" type="numeric"/>
+            <column name="dimension_unit_width" type="numeric"/>
+            <column name="dimension_unit_of_measure" type="string"/>
+            <column name="hazardous_weight" type="string"/>
+            <column name="france_abc_picking_category" type="string"/>
+            <column name="mdm_temp_conditions_category" type="string"/>
+            <column name="perish_code_category" type="string"/>
+            <column name="un_number" type="string"/>
+            <column name="hazard_class" type="string"/>
+            <column name="unit_of_issue" type="string"/>
+            <column name="rounding_factor" type="string"/>
+            <column name="item_buyer_name" type="string"/>
+            <column name="hazardous_weight_uom" type="string"/>
+            <column name="gph_code" type="string"/>
+            <column name="mos" type="string"/>
+            <column name="lpn_package" type="string"/>
+            <column name="qte_unitaire_palette" type="numeric"/>
+            <column name="type_um" type="string"/>
+            <column name="hauteur_um" type="numeric"/>
+            <column name="longueur_um" type="numeric"/>
+            <column name="largeur_um" type="numeric"/>
+            <column name="qte_unitaire_carton" type="numeric"/>
+            <column name="dimensions_uc" type="string"/>
+            <column name="specifications" type="string"/>
+            <column name="cadence_poste" type="string"/>
+            <column name="pfse" type="string"/>
+            <column name="rhenus" type="string"/>
+            <column name="test_capa" type="string"/>
+            <column name="abc" type="string"/>
+            <column name="item_creation_date" type="date"/>
+            <column name="categorie_nm" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

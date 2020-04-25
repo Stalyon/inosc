@@ -1,0 +1,446 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="item">
+            <h2><span>Item</span> {{ item.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Organization Code</span></dt>
+                <dd>
+                    <span>{{ item.organizationCode }}</span>
+                </dd>
+                <dt><span>Business Unit</span></dt>
+                <dd>
+                    <span>{{ item.businessUnit }}</span>
+                </dd>
+                <dt><span>Business Unit Description</span></dt>
+                <dd>
+                    <span>{{ item.businessUnitDescription }}</span>
+                </dd>
+                <dt><span>Business Field</span></dt>
+                <dd>
+                    <span>{{ item.businessField }}</span>
+                </dd>
+                <dt><span>Business Field Description</span></dt>
+                <dd>
+                    <span>{{ item.businessFieldDescription }}</span>
+                </dd>
+                <dt><span>Business Line</span></dt>
+                <dd>
+                    <span>{{ item.businessLine }}</span>
+                </dd>
+                <dt><span>Business Line Description</span></dt>
+                <dd>
+                    <span>{{ item.businessLineDescription }}</span>
+                </dd>
+                <dt><span>Workcenter</span></dt>
+                <dd>
+                    <span>{{ item.workcenter }}</span>
+                </dd>
+                <dt><span>Product Group</span></dt>
+                <dd>
+                    <span>{{ item.productGroup }}</span>
+                </dd>
+                <dt><span>Product Group Description</span></dt>
+                <dd>
+                    <span>{{ item.productGroupDescription }}</span>
+                </dd>
+                <dt><span>Product Category</span></dt>
+                <dd>
+                    <span>{{ item.productCategory }}</span>
+                </dd>
+                <dt><span>Product Category Description</span></dt>
+                <dd>
+                    <span>{{ item.productCategoryDescription }}</span>
+                </dd>
+                <dt><span>Product Line</span></dt>
+                <dd>
+                    <span>{{ item.productLine }}</span>
+                </dd>
+                <dt><span>Product Line Description</span></dt>
+                <dd>
+                    <span>{{ item.productLineDescription }}</span>
+                </dd>
+                <dt><span>Product Line Manager</span></dt>
+                <dd>
+                    <span>{{ item.productLineManager }}</span>
+                </dd>
+                <dt><span>Product Division</span></dt>
+                <dd>
+                    <span>{{ item.productDivision }}</span>
+                </dd>
+                <dt><span>Product Category Manager</span></dt>
+                <dd>
+                    <span>{{ item.productCategoryManager }}</span>
+                </dd>
+                <dt><span>Plant Category</span></dt>
+                <dd>
+                    <span>{{ item.plantCategory }}</span>
+                </dd>
+                <dt><span>Item Type</span></dt>
+                <dd>
+                    <span>{{ item.itemType }}</span>
+                </dd>
+                <dt><span>Primary Unit Of Measure</span></dt>
+                <dd>
+                    <span>{{ item.primaryUnitOfMeasure }}</span>
+                </dd>
+                <dt><span>Item Number</span></dt>
+                <dd>
+                    <span>{{ item.itemNumber }}</span>
+                </dd>
+                <dt><span>Item Description</span></dt>
+                <dd>
+                    <span>{{ item.itemDescription }}</span>
+                </dd>
+                <dt><span>Inventory Item Status Code</span></dt>
+                <dd>
+                    <span>{{ item.inventoryItemStatusCode }}</span>
+                </dd>
+                <dt><span>Planning Make Or Buy Code</span></dt>
+                <dd>
+                    <span>{{ item.planningMakeOrBuyCode }}</span>
+                </dd>
+                <dt><span>Item Planner Code</span></dt>
+                <dd>
+                    <span>{{ item.itemPlannerCode }}</span>
+                </dd>
+                <dt><span>Planner Name</span></dt>
+                <dd>
+                    <span>{{ item.plannerName }}</span>
+                </dd>
+                <dt><span>Mrp Planning Method</span></dt>
+                <dd>
+                    <span>{{ item.mrpPlanningMethod }}</span>
+                </dd>
+                <dt><span>Inventory Planning Method</span></dt>
+                <dd>
+                    <span>{{ item.inventoryPlanningMethod }}</span>
+                </dd>
+                <dt><span>Lead Time Lot Size</span></dt>
+                <dd>
+                    <span>{{ item.leadTimeLotSize }}</span>
+                </dd>
+                <dt><span>Fixed Lead Time</span></dt>
+                <dd>
+                    <span>{{ item.fixedLeadTime }}</span>
+                </dd>
+                <dt><span>Fixed Order Quanitiy</span></dt>
+                <dd>
+                    <span>{{ item.fixedOrderQuanitiy }}</span>
+                </dd>
+                <dt><span>Fixed Lot Multiplier</span></dt>
+                <dd>
+                    <span>{{ item.fixedLotMultiplier }}</span>
+                </dd>
+                <dt><span>Current Safety Stock Quantity</span></dt>
+                <dd>
+                    <span>{{ item.currentSafetyStockQuantity }}</span>
+                </dd>
+                <dt><span>Demand Time Fence</span></dt>
+                <dd>
+                    <span>{{ item.demandTimeFence }}</span>
+                </dd>
+                <dt><span>Demand Time Fence Days</span></dt>
+                <dd>
+                    <span>{{ item.demandTimeFenceDays }}</span>
+                </dd>
+                <dt><span>Fixed Days Supply</span></dt>
+                <dd>
+                    <span>{{ item.fixedDaysSupply }}</span>
+                </dd>
+                <dt><span>Frozen Item Cost</span></dt>
+                <dd>
+                    <span>{{ item.frozenItemCost }}</span>
+                </dd>
+                <dt><span>Frozen Material Cost</span></dt>
+                <dd>
+                    <span>{{ item.frozenMaterialCost }}</span>
+                </dd>
+                <dt><span>Max Minmax Quantity</span></dt>
+                <dd>
+                    <span>{{ item.maxMinmaxQuantity }}</span>
+                </dd>
+                <dt><span>Min Minmax Quantity</span></dt>
+                <dd>
+                    <span>{{ item.minMinmaxQuantity }}</span>
+                </dd>
+                <dt><span>Order Quantity Max</span></dt>
+                <dd>
+                    <span>{{ item.orderQuantityMax }}</span>
+                </dd>
+                <dt><span>Order Quantity Min</span></dt>
+                <dd>
+                    <span>{{ item.orderQuantityMin }}</span>
+                </dd>
+                <dt><span>Planning Time Fence Days</span></dt>
+                <dd>
+                    <span>{{ item.planningTimeFenceDays }}</span>
+                </dd>
+                <dt><span>Postprocessing Lead Time</span></dt>
+                <dd>
+                    <span>{{ item.postprocessingLeadTime }}</span>
+                </dd>
+                <dt><span>Preprocessing Lead Time</span></dt>
+                <dd>
+                    <span>{{ item.preprocessingLeadTime }}</span>
+                </dd>
+                <dt><span>Processing Lead Time</span></dt>
+                <dd>
+                    <span>{{ item.processingLeadTime }}</span>
+                </dd>
+                <dt><span>Mdm Go H Category</span></dt>
+                <dd>
+                    <span>{{ item.mdmGoHCategory }}</span>
+                </dd>
+                <dt><span>Resource Name</span></dt>
+                <dd>
+                    <span>{{ item.resourceName }}</span>
+                </dd>
+                <dt><span>Usage Rate</span></dt>
+                <dd>
+                    <span>{{ item.usageRate }}</span>
+                </dd>
+                <dt><span>Asl Vmi Enabled</span></dt>
+                <dd>
+                    <span>{{ item.aslVmiEnabled }}</span>
+                </dd>
+                <dt><span>Asl Consigned From Supplier</span></dt>
+                <dd>
+                    <span>{{ item.aslConsignedFromSupplier }}</span>
+                </dd>
+                <dt><span>Asl Supplier</span></dt>
+                <dd>
+                    <span>{{ item.aslSupplier }}</span>
+                </dd>
+                <dt><span>Asl Supplier Number</span></dt>
+                <dd>
+                    <span>{{ item.aslSupplierNumber }}</span>
+                </dd>
+                <dt><span>Aslsupplier Site</span></dt>
+                <dd>
+                    <span>{{ item.aslsupplierSite }}</span>
+                </dd>
+                <dt><span>Asl Supplier Item</span></dt>
+                <dd>
+                    <span>{{ item.aslSupplierItem }}</span>
+                </dd>
+                <dt><span>Aslpurchasing Uom</span></dt>
+                <dd>
+                    <span>{{ item.aslpurchasingUom }}</span>
+                </dd>
+                <dt><span>Sl Process Code Detail</span></dt>
+                <dd>
+                    <span>{{ item.slProcessCodeDetail }}</span>
+                </dd>
+                <dt><span>Sl Effective From Date</span></dt>
+                <dd>
+                    <span>{{ item.slEffectiveFromDate }}</span>
+                </dd>
+                <dt><span>Receipt Routing Detail</span></dt>
+                <dd>
+                    <span>{{ item.receiptRoutingDetail }}</span>
+                </dd>
+                <dt><span>Vmi Planning Party</span></dt>
+                <dd>
+                    <span>{{ item.vmiPlanningParty }}</span>
+                </dd>
+                <dt><span>List Price</span></dt>
+                <dd>
+                    <span>{{ item.listPrice }}</span>
+                </dd>
+                <dt><span>Mdm Global Id</span></dt>
+                <dd>
+                    <span>{{ item.mdmGlobalId }}</span>
+                </dd>
+                <dt><span>Mdm Article Number Ygart</span></dt>
+                <dd>
+                    <span>{{ item.mdmArticleNumberYgart }}</span>
+                </dd>
+                <dt><span>Lot Control</span></dt>
+                <dd>
+                    <span>{{ item.lotControl }}</span>
+                </dd>
+                <dt><span>Shelf Life Control</span></dt>
+                <dd>
+                    <span>{{ item.shelfLifeControl }}</span>
+                </dd>
+                <dt><span>Shelf Life Days</span></dt>
+                <dd>
+                    <span>{{ item.shelfLifeDays }}</span>
+                </dd>
+                <dt><span>Serial Number Control</span></dt>
+                <dd>
+                    <span>{{ item.serialNumberControl }}</span>
+                </dd>
+                <dt><span>Unit Volume</span></dt>
+                <dd>
+                    <span>{{ item.unitVolume }}</span>
+                </dd>
+                <dt><span>Volume Unit Of Measure</span></dt>
+                <dd>
+                    <span>{{ item.volumeUnitOfMeasure }}</span>
+                </dd>
+                <dt><span>Unit Weight</span></dt>
+                <dd>
+                    <span>{{ item.unitWeight }}</span>
+                </dd>
+                <dt><span>Weight Unit Of Measure</span></dt>
+                <dd>
+                    <span>{{ item.weightUnitOfMeasure }}</span>
+                </dd>
+                <dt><span>Units In A Box Package</span></dt>
+                <dd>
+                    <span>{{ item.unitsInABoxPackage }}</span>
+                </dd>
+                <dt><span>Revision Control</span></dt>
+                <dd>
+                    <span>{{ item.revisionControl }}</span>
+                </dd>
+                <dt><span>Dimension Unit Height</span></dt>
+                <dd>
+                    <span>{{ item.dimensionUnitHeight }}</span>
+                </dd>
+                <dt><span>Dimension Unit Length</span></dt>
+                <dd>
+                    <span>{{ item.dimensionUnitLength }}</span>
+                </dd>
+                <dt><span>Dimension Unit Width</span></dt>
+                <dd>
+                    <span>{{ item.dimensionUnitWidth }}</span>
+                </dd>
+                <dt><span>Dimension Unit Of Measure</span></dt>
+                <dd>
+                    <span>{{ item.dimensionUnitOfMeasure }}</span>
+                </dd>
+                <dt><span>Hazardous Weight</span></dt>
+                <dd>
+                    <span>{{ item.hazardousWeight }}</span>
+                </dd>
+                <dt><span>France Abc Picking Category</span></dt>
+                <dd>
+                    <span>{{ item.franceAbcPickingCategory }}</span>
+                </dd>
+                <dt><span>Mdm Temp Conditions Category</span></dt>
+                <dd>
+                    <span>{{ item.mdmTempConditionsCategory }}</span>
+                </dd>
+                <dt><span>Perish Code Category</span></dt>
+                <dd>
+                    <span>{{ item.perishCodeCategory }}</span>
+                </dd>
+                <dt><span>Un Number</span></dt>
+                <dd>
+                    <span>{{ item.unNumber }}</span>
+                </dd>
+                <dt><span>Hazard Class</span></dt>
+                <dd>
+                    <span>{{ item.hazardClass }}</span>
+                </dd>
+                <dt><span>Unit Of Issue</span></dt>
+                <dd>
+                    <span>{{ item.unitOfIssue }}</span>
+                </dd>
+                <dt><span>Rounding Factor</span></dt>
+                <dd>
+                    <span>{{ item.roundingFactor }}</span>
+                </dd>
+                <dt><span>Item Buyer Name</span></dt>
+                <dd>
+                    <span>{{ item.itemBuyerName }}</span>
+                </dd>
+                <dt><span>Hazardous Weight Uom</span></dt>
+                <dd>
+                    <span>{{ item.hazardousWeightUom }}</span>
+                </dd>
+                <dt><span>Gph Code</span></dt>
+                <dd>
+                    <span>{{ item.gphCode }}</span>
+                </dd>
+                <dt><span>Mos</span></dt>
+                <dd>
+                    <span>{{ item.mos }}</span>
+                </dd>
+                <dt><span>Lpn Package</span></dt>
+                <dd>
+                    <span>{{ item.lpnPackage }}</span>
+                </dd>
+                <dt><span>Qte Unitaire Palette</span></dt>
+                <dd>
+                    <span>{{ item.qteUnitairePalette }}</span>
+                </dd>
+                <dt><span>Type Um</span></dt>
+                <dd>
+                    <span>{{ item.typeUm }}</span>
+                </dd>
+                <dt><span>Hauteur Um</span></dt>
+                <dd>
+                    <span>{{ item.hauteurUm }}</span>
+                </dd>
+                <dt><span>Longueur Um</span></dt>
+                <dd>
+                    <span>{{ item.longueurUm }}</span>
+                </dd>
+                <dt><span>Largeur Um</span></dt>
+                <dd>
+                    <span>{{ item.largeurUm }}</span>
+                </dd>
+                <dt><span>Qte Unitaire Carton</span></dt>
+                <dd>
+                    <span>{{ item.qteUnitaireCarton }}</span>
+                </dd>
+                <dt><span>Dimensions Uc</span></dt>
+                <dd>
+                    <span>{{ item.dimensionsUc }}</span>
+                </dd>
+                <dt><span>Specifications</span></dt>
+                <dd>
+                    <span>{{ item.specifications }}</span>
+                </dd>
+                <dt><span>Cadence Poste</span></dt>
+                <dd>
+                    <span>{{ item.cadencePoste }}</span>
+                </dd>
+                <dt><span>Pfse</span></dt>
+                <dd>
+                    <span>{{ item.pfse }}</span>
+                </dd>
+                <dt><span>Rhenus</span></dt>
+                <dd>
+                    <span>{{ item.rhenus }}</span>
+                </dd>
+                <dt><span>Test Capa</span></dt>
+                <dd>
+                    <span>{{ item.testCapa }}</span>
+                </dd>
+                <dt><span>Abc</span></dt>
+                <dd>
+                    <span>{{ item.abc }}</span>
+                </dd>
+                <dt><span>Item Creation Date</span></dt>
+                <dd>
+                    <span>{{ item.itemCreationDate }}</span>
+                </dd>
+                <dt><span>Categorie Nm</span></dt>
+                <dd>
+                    <span>{{ item.categorieNm }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/item', item.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

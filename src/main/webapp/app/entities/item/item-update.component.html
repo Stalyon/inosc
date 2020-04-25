@@ -1,0 +1,1106 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-item-heading">Create or edit a Item</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_organizationCode">Organization Code</label>
+                    <input type="text" class="form-control" name="organizationCode" id="field_organizationCode"
+                           formControlName="organizationCode"/>
+                    <div *ngIf="editForm.get('organizationCode')!.invalid && (editForm.get('organizationCode')!.dirty || editForm.get('organizationCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('organizationCode')?.errors?.maxlength">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_businessUnit">Business Unit</label>
+                    <input type="text" class="form-control" name="businessUnit" id="field_businessUnit"
+                           formControlName="businessUnit"/>
+                    <div *ngIf="editForm.get('businessUnit')!.invalid && (editForm.get('businessUnit')!.dirty || editForm.get('businessUnit')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('businessUnit')?.errors?.maxlength">
+                        This field cannot be longer than 7 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_businessUnitDescription">Business Unit Description</label>
+                    <input type="text" class="form-control" name="businessUnitDescription" id="field_businessUnitDescription"
+                           formControlName="businessUnitDescription"/>
+                    <div *ngIf="editForm.get('businessUnitDescription')!.invalid && (editForm.get('businessUnitDescription')!.dirty || editForm.get('businessUnitDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('businessUnitDescription')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_businessField">Business Field</label>
+                    <input type="text" class="form-control" name="businessField" id="field_businessField"
+                           formControlName="businessField"/>
+                    <div *ngIf="editForm.get('businessField')!.invalid && (editForm.get('businessField')!.dirty || editForm.get('businessField')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('businessField')?.errors?.maxlength">
+                        This field cannot be longer than 6 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_businessFieldDescription">Business Field Description</label>
+                    <input type="text" class="form-control" name="businessFieldDescription" id="field_businessFieldDescription"
+                           formControlName="businessFieldDescription"/>
+                    <div *ngIf="editForm.get('businessFieldDescription')!.invalid && (editForm.get('businessFieldDescription')!.dirty || editForm.get('businessFieldDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('businessFieldDescription')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_businessLine">Business Line</label>
+                    <input type="text" class="form-control" name="businessLine" id="field_businessLine"
+                           formControlName="businessLine"/>
+                    <div *ngIf="editForm.get('businessLine')!.invalid && (editForm.get('businessLine')!.dirty || editForm.get('businessLine')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('businessLine')?.errors?.maxlength">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_businessLineDescription">Business Line Description</label>
+                    <input type="text" class="form-control" name="businessLineDescription" id="field_businessLineDescription"
+                           formControlName="businessLineDescription"/>
+                    <div *ngIf="editForm.get('businessLineDescription')!.invalid && (editForm.get('businessLineDescription')!.dirty || editForm.get('businessLineDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('businessLineDescription')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_workcenter">Workcenter</label>
+                    <input type="text" class="form-control" name="workcenter" id="field_workcenter"
+                           formControlName="workcenter"/>
+                    <div *ngIf="editForm.get('workcenter')!.invalid && (editForm.get('workcenter')!.dirty || editForm.get('workcenter')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('workcenter')?.errors?.maxlength">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productGroup">Product Group</label>
+                    <input type="text" class="form-control" name="productGroup" id="field_productGroup"
+                           formControlName="productGroup"/>
+                    <div *ngIf="editForm.get('productGroup')!.invalid && (editForm.get('productGroup')!.dirty || editForm.get('productGroup')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productGroup')?.errors?.maxlength">
+                        This field cannot be longer than 7 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productGroupDescription">Product Group Description</label>
+                    <input type="text" class="form-control" name="productGroupDescription" id="field_productGroupDescription"
+                           formControlName="productGroupDescription"/>
+                    <div *ngIf="editForm.get('productGroupDescription')!.invalid && (editForm.get('productGroupDescription')!.dirty || editForm.get('productGroupDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productGroupDescription')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productCategory">Product Category</label>
+                    <input type="text" class="form-control" name="productCategory" id="field_productCategory"
+                           formControlName="productCategory"/>
+                    <div *ngIf="editForm.get('productCategory')!.invalid && (editForm.get('productCategory')!.dirty || editForm.get('productCategory')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productCategory')?.errors?.maxlength">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productCategoryDescription">Product Category Description</label>
+                    <input type="text" class="form-control" name="productCategoryDescription" id="field_productCategoryDescription"
+                           formControlName="productCategoryDescription"/>
+                    <div *ngIf="editForm.get('productCategoryDescription')!.invalid && (editForm.get('productCategoryDescription')!.dirty || editForm.get('productCategoryDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productCategoryDescription')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productLine">Product Line</label>
+                    <input type="text" class="form-control" name="productLine" id="field_productLine"
+                           formControlName="productLine"/>
+                    <div *ngIf="editForm.get('productLine')!.invalid && (editForm.get('productLine')!.dirty || editForm.get('productLine')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productLine')?.errors?.maxlength">
+                        This field cannot be longer than 2 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productLineDescription">Product Line Description</label>
+                    <input type="text" class="form-control" name="productLineDescription" id="field_productLineDescription"
+                           formControlName="productLineDescription"/>
+                    <div *ngIf="editForm.get('productLineDescription')!.invalid && (editForm.get('productLineDescription')!.dirty || editForm.get('productLineDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productLineDescription')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productLineManager">Product Line Manager</label>
+                    <input type="text" class="form-control" name="productLineManager" id="field_productLineManager"
+                           formControlName="productLineManager"/>
+                    <div *ngIf="editForm.get('productLineManager')!.invalid && (editForm.get('productLineManager')!.dirty || editForm.get('productLineManager')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productLineManager')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productDivision">Product Division</label>
+                    <input type="text" class="form-control" name="productDivision" id="field_productDivision"
+                           formControlName="productDivision"/>
+                    <div *ngIf="editForm.get('productDivision')!.invalid && (editForm.get('productDivision')!.dirty || editForm.get('productDivision')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productDivision')?.errors?.maxlength">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productCategoryManager">Product Category Manager</label>
+                    <input type="text" class="form-control" name="productCategoryManager" id="field_productCategoryManager"
+                           formControlName="productCategoryManager"/>
+                    <div *ngIf="editForm.get('productCategoryManager')!.invalid && (editForm.get('productCategoryManager')!.dirty || editForm.get('productCategoryManager')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productCategoryManager')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_plantCategory">Plant Category</label>
+                    <input type="text" class="form-control" name="plantCategory" id="field_plantCategory"
+                           formControlName="plantCategory"/>
+                    <div *ngIf="editForm.get('plantCategory')!.invalid && (editForm.get('plantCategory')!.dirty || editForm.get('plantCategory')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('plantCategory')?.errors?.maxlength">
+                        This field cannot be longer than 2 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemType">Item Type</label>
+                    <input type="text" class="form-control" name="itemType" id="field_itemType"
+                           formControlName="itemType"/>
+                    <div *ngIf="editForm.get('itemType')!.invalid && (editForm.get('itemType')!.dirty || editForm.get('itemType')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemType')?.errors?.maxlength">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_primaryUnitOfMeasure">Primary Unit Of Measure</label>
+                    <input type="text" class="form-control" name="primaryUnitOfMeasure" id="field_primaryUnitOfMeasure"
+                           formControlName="primaryUnitOfMeasure"/>
+                    <div *ngIf="editForm.get('primaryUnitOfMeasure')!.invalid && (editForm.get('primaryUnitOfMeasure')!.dirty || editForm.get('primaryUnitOfMeasure')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('primaryUnitOfMeasure')?.errors?.maxlength">
+                        This field cannot be longer than 2 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemNumber">Item Number</label>
+                    <input type="text" class="form-control" name="itemNumber" id="field_itemNumber"
+                           formControlName="itemNumber"/>
+                    <div *ngIf="editForm.get('itemNumber')!.invalid && (editForm.get('itemNumber')!.dirty || editForm.get('itemNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemNumber')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemNumber')?.errors?.maxlength">
+                        This field cannot be longer than 18 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemDescription">Item Description</label>
+                    <input type="text" class="form-control" name="itemDescription" id="field_itemDescription"
+                           formControlName="itemDescription"/>
+                    <div *ngIf="editForm.get('itemDescription')!.invalid && (editForm.get('itemDescription')!.dirty || editForm.get('itemDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemDescription')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_inventoryItemStatusCode">Inventory Item Status Code</label>
+                    <input type="text" class="form-control" name="inventoryItemStatusCode" id="field_inventoryItemStatusCode"
+                           formControlName="inventoryItemStatusCode"/>
+                    <div *ngIf="editForm.get('inventoryItemStatusCode')!.invalid && (editForm.get('inventoryItemStatusCode')!.dirty || editForm.get('inventoryItemStatusCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('inventoryItemStatusCode')?.errors?.maxlength">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_planningMakeOrBuyCode">Planning Make Or Buy Code</label>
+                    <input type="text" class="form-control" name="planningMakeOrBuyCode" id="field_planningMakeOrBuyCode"
+                           formControlName="planningMakeOrBuyCode"/>
+                    <div *ngIf="editForm.get('planningMakeOrBuyCode')!.invalid && (editForm.get('planningMakeOrBuyCode')!.dirty || editForm.get('planningMakeOrBuyCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('planningMakeOrBuyCode')?.errors?.maxlength">
+                        This field cannot be longer than 4 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemPlannerCode">Item Planner Code</label>
+                    <input type="text" class="form-control" name="itemPlannerCode" id="field_itemPlannerCode"
+                           formControlName="itemPlannerCode"/>
+                    <div *ngIf="editForm.get('itemPlannerCode')!.invalid && (editForm.get('itemPlannerCode')!.dirty || editForm.get('itemPlannerCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemPlannerCode')?.errors?.maxlength">
+                        This field cannot be longer than 4 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_plannerName">Planner Name</label>
+                    <input type="text" class="form-control" name="plannerName" id="field_plannerName"
+                           formControlName="plannerName"/>
+                    <div *ngIf="editForm.get('plannerName')!.invalid && (editForm.get('plannerName')!.dirty || editForm.get('plannerName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('plannerName')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mrpPlanningMethod">Mrp Planning Method</label>
+                    <input type="text" class="form-control" name="mrpPlanningMethod" id="field_mrpPlanningMethod"
+                           formControlName="mrpPlanningMethod"/>
+                    <div *ngIf="editForm.get('mrpPlanningMethod')!.invalid && (editForm.get('mrpPlanningMethod')!.dirty || editForm.get('mrpPlanningMethod')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mrpPlanningMethod')?.errors?.maxlength">
+                        This field cannot be longer than 15 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_inventoryPlanningMethod">Inventory Planning Method</label>
+                    <input type="text" class="form-control" name="inventoryPlanningMethod" id="field_inventoryPlanningMethod"
+                           formControlName="inventoryPlanningMethod"/>
+                    <div *ngIf="editForm.get('inventoryPlanningMethod')!.invalid && (editForm.get('inventoryPlanningMethod')!.dirty || editForm.get('inventoryPlanningMethod')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('inventoryPlanningMethod')?.errors?.maxlength">
+                        This field cannot be longer than 16 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_leadTimeLotSize">Lead Time Lot Size</label>
+                    <input type="number" class="form-control" name="leadTimeLotSize" id="field_leadTimeLotSize"
+                           formControlName="leadTimeLotSize"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fixedLeadTime">Fixed Lead Time</label>
+                    <input type="number" class="form-control" name="fixedLeadTime" id="field_fixedLeadTime"
+                           formControlName="fixedLeadTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fixedOrderQuanitiy">Fixed Order Quanitiy</label>
+                    <input type="number" class="form-control" name="fixedOrderQuanitiy" id="field_fixedOrderQuanitiy"
+                           formControlName="fixedOrderQuanitiy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fixedLotMultiplier">Fixed Lot Multiplier</label>
+                    <input type="text" class="form-control" name="fixedLotMultiplier" id="field_fixedLotMultiplier"
+                           formControlName="fixedLotMultiplier"/>
+                    <div *ngIf="editForm.get('fixedLotMultiplier')!.invalid && (editForm.get('fixedLotMultiplier')!.dirty || editForm.get('fixedLotMultiplier')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fixedLotMultiplier')?.errors?.maxlength">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_currentSafetyStockQuantity">Current Safety Stock Quantity</label>
+                    <input type="number" class="form-control" name="currentSafetyStockQuantity" id="field_currentSafetyStockQuantity"
+                           formControlName="currentSafetyStockQuantity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_demandTimeFence">Demand Time Fence</label>
+                    <input type="text" class="form-control" name="demandTimeFence" id="field_demandTimeFence"
+                           formControlName="demandTimeFence"/>
+                    <div *ngIf="editForm.get('demandTimeFence')!.invalid && (editForm.get('demandTimeFence')!.dirty || editForm.get('demandTimeFence')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('demandTimeFence')?.errors?.maxlength">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_demandTimeFenceDays">Demand Time Fence Days</label>
+                    <input type="number" class="form-control" name="demandTimeFenceDays" id="field_demandTimeFenceDays"
+                           formControlName="demandTimeFenceDays"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fixedDaysSupply">Fixed Days Supply</label>
+                    <input type="number" class="form-control" name="fixedDaysSupply" id="field_fixedDaysSupply"
+                           formControlName="fixedDaysSupply"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_frozenItemCost">Frozen Item Cost</label>
+                    <input type="number" class="form-control" name="frozenItemCost" id="field_frozenItemCost"
+                           formControlName="frozenItemCost"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_frozenMaterialCost">Frozen Material Cost</label>
+                    <input type="number" class="form-control" name="frozenMaterialCost" id="field_frozenMaterialCost"
+                           formControlName="frozenMaterialCost"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_maxMinmaxQuantity">Max Minmax Quantity</label>
+                    <input type="number" class="form-control" name="maxMinmaxQuantity" id="field_maxMinmaxQuantity"
+                           formControlName="maxMinmaxQuantity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_minMinmaxQuantity">Min Minmax Quantity</label>
+                    <input type="number" class="form-control" name="minMinmaxQuantity" id="field_minMinmaxQuantity"
+                           formControlName="minMinmaxQuantity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orderQuantityMax">Order Quantity Max</label>
+                    <input type="number" class="form-control" name="orderQuantityMax" id="field_orderQuantityMax"
+                           formControlName="orderQuantityMax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orderQuantityMin">Order Quantity Min</label>
+                    <input type="number" class="form-control" name="orderQuantityMin" id="field_orderQuantityMin"
+                           formControlName="orderQuantityMin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_planningTimeFenceDays">Planning Time Fence Days</label>
+                    <input type="number" class="form-control" name="planningTimeFenceDays" id="field_planningTimeFenceDays"
+                           formControlName="planningTimeFenceDays"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_postprocessingLeadTime">Postprocessing Lead Time</label>
+                    <input type="number" class="form-control" name="postprocessingLeadTime" id="field_postprocessingLeadTime"
+                           formControlName="postprocessingLeadTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_preprocessingLeadTime">Preprocessing Lead Time</label>
+                    <input type="number" class="form-control" name="preprocessingLeadTime" id="field_preprocessingLeadTime"
+                           formControlName="preprocessingLeadTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_processingLeadTime">Processing Lead Time</label>
+                    <input type="number" class="form-control" name="processingLeadTime" id="field_processingLeadTime"
+                           formControlName="processingLeadTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mdmGoHCategory">Mdm Go H Category</label>
+                    <input type="text" class="form-control" name="mdmGoHCategory" id="field_mdmGoHCategory"
+                           formControlName="mdmGoHCategory"/>
+                    <div *ngIf="editForm.get('mdmGoHCategory')!.invalid && (editForm.get('mdmGoHCategory')!.dirty || editForm.get('mdmGoHCategory')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mdmGoHCategory')?.errors?.maxlength">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_resourceName">Resource Name</label>
+                    <input type="text" class="form-control" name="resourceName" id="field_resourceName"
+                           formControlName="resourceName"/>
+                    <div *ngIf="editForm.get('resourceName')!.invalid && (editForm.get('resourceName')!.dirty || editForm.get('resourceName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('resourceName')?.errors?.maxlength">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_usageRate">Usage Rate</label>
+                    <input type="number" class="form-control" name="usageRate" id="field_usageRate"
+                           formControlName="usageRate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aslVmiEnabled">Asl Vmi Enabled</label>
+                    <input type="text" class="form-control" name="aslVmiEnabled" id="field_aslVmiEnabled"
+                           formControlName="aslVmiEnabled"/>
+                    <div *ngIf="editForm.get('aslVmiEnabled')!.invalid && (editForm.get('aslVmiEnabled')!.dirty || editForm.get('aslVmiEnabled')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aslVmiEnabled')?.errors?.maxlength">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aslConsignedFromSupplier">Asl Consigned From Supplier</label>
+                    <input type="text" class="form-control" name="aslConsignedFromSupplier" id="field_aslConsignedFromSupplier"
+                           formControlName="aslConsignedFromSupplier"/>
+                    <div *ngIf="editForm.get('aslConsignedFromSupplier')!.invalid && (editForm.get('aslConsignedFromSupplier')!.dirty || editForm.get('aslConsignedFromSupplier')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aslConsignedFromSupplier')?.errors?.maxlength">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aslSupplier">Asl Supplier</label>
+                    <input type="text" class="form-control" name="aslSupplier" id="field_aslSupplier"
+                           formControlName="aslSupplier"/>
+                    <div *ngIf="editForm.get('aslSupplier')!.invalid && (editForm.get('aslSupplier')!.dirty || editForm.get('aslSupplier')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aslSupplier')?.errors?.maxlength">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aslSupplierNumber">Asl Supplier Number</label>
+                    <input type="text" class="form-control" name="aslSupplierNumber" id="field_aslSupplierNumber"
+                           formControlName="aslSupplierNumber"/>
+                    <div *ngIf="editForm.get('aslSupplierNumber')!.invalid && (editForm.get('aslSupplierNumber')!.dirty || editForm.get('aslSupplierNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aslSupplierNumber')?.errors?.maxlength">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aslsupplierSite">Aslsupplier Site</label>
+                    <input type="text" class="form-control" name="aslsupplierSite" id="field_aslsupplierSite"
+                           formControlName="aslsupplierSite"/>
+                    <div *ngIf="editForm.get('aslsupplierSite')!.invalid && (editForm.get('aslsupplierSite')!.dirty || editForm.get('aslsupplierSite')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aslsupplierSite')?.errors?.maxlength">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aslSupplierItem">Asl Supplier Item</label>
+                    <input type="text" class="form-control" name="aslSupplierItem" id="field_aslSupplierItem"
+                           formControlName="aslSupplierItem"/>
+                    <div *ngIf="editForm.get('aslSupplierItem')!.invalid && (editForm.get('aslSupplierItem')!.dirty || editForm.get('aslSupplierItem')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aslSupplierItem')?.errors?.maxlength">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aslpurchasingUom">Aslpurchasing Uom</label>
+                    <input type="text" class="form-control" name="aslpurchasingUom" id="field_aslpurchasingUom"
+                           formControlName="aslpurchasingUom"/>
+                    <div *ngIf="editForm.get('aslpurchasingUom')!.invalid && (editForm.get('aslpurchasingUom')!.dirty || editForm.get('aslpurchasingUom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aslpurchasingUom')?.errors?.maxlength">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_slProcessCodeDetail">Sl Process Code Detail</label>
+                    <input type="text" class="form-control" name="slProcessCodeDetail" id="field_slProcessCodeDetail"
+                           formControlName="slProcessCodeDetail"/>
+                    <div *ngIf="editForm.get('slProcessCodeDetail')!.invalid && (editForm.get('slProcessCodeDetail')!.dirty || editForm.get('slProcessCodeDetail')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('slProcessCodeDetail')?.errors?.maxlength">
+                        This field cannot be longer than 25 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_slEffectiveFromDate">Sl Effective From Date</label>
+                    <div class="input-group">
+                        <input id="field_slEffectiveFromDate" type="text" class="form-control" name="slEffectiveFromDate" ngbDatepicker #slEffectiveFromDateDp="ngbDatepicker" formControlName="slEffectiveFromDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="slEffectiveFromDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_receiptRoutingDetail">Receipt Routing Detail</label>
+                    <input type="text" class="form-control" name="receiptRoutingDetail" id="field_receiptRoutingDetail"
+                           formControlName="receiptRoutingDetail"/>
+                    <div *ngIf="editForm.get('receiptRoutingDetail')!.invalid && (editForm.get('receiptRoutingDetail')!.dirty || editForm.get('receiptRoutingDetail')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('receiptRoutingDetail')?.errors?.maxlength">
+                        This field cannot be longer than 25 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_vmiPlanningParty">Vmi Planning Party</label>
+                    <input type="text" class="form-control" name="vmiPlanningParty" id="field_vmiPlanningParty"
+                           formControlName="vmiPlanningParty"/>
+                    <div *ngIf="editForm.get('vmiPlanningParty')!.invalid && (editForm.get('vmiPlanningParty')!.dirty || editForm.get('vmiPlanningParty')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('vmiPlanningParty')?.errors?.maxlength">
+                        This field cannot be longer than 35 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_listPrice">List Price</label>
+                    <input type="number" class="form-control" name="listPrice" id="field_listPrice"
+                           formControlName="listPrice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mdmGlobalId">Mdm Global Id</label>
+                    <input type="text" class="form-control" name="mdmGlobalId" id="field_mdmGlobalId"
+                           formControlName="mdmGlobalId"/>
+                    <div *ngIf="editForm.get('mdmGlobalId')!.invalid && (editForm.get('mdmGlobalId')!.dirty || editForm.get('mdmGlobalId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mdmGlobalId')?.errors?.maxlength">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mdmArticleNumberYgart">Mdm Article Number Ygart</label>
+                    <input type="text" class="form-control" name="mdmArticleNumberYgart" id="field_mdmArticleNumberYgart"
+                           formControlName="mdmArticleNumberYgart"/>
+                    <div *ngIf="editForm.get('mdmArticleNumberYgart')!.invalid && (editForm.get('mdmArticleNumberYgart')!.dirty || editForm.get('mdmArticleNumberYgart')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mdmArticleNumberYgart')?.errors?.maxlength">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotControl">Lot Control</label>
+                    <input type="text" class="form-control" name="lotControl" id="field_lotControl"
+                           formControlName="lotControl"/>
+                    <div *ngIf="editForm.get('lotControl')!.invalid && (editForm.get('lotControl')!.dirty || editForm.get('lotControl')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lotControl')?.errors?.maxlength">
+                        This field cannot be longer than 16 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_shelfLifeControl">Shelf Life Control</label>
+                    <input type="text" class="form-control" name="shelfLifeControl" id="field_shelfLifeControl"
+                           formControlName="shelfLifeControl"/>
+                    <div *ngIf="editForm.get('shelfLifeControl')!.invalid && (editForm.get('shelfLifeControl')!.dirty || editForm.get('shelfLifeControl')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('shelfLifeControl')?.errors?.maxlength">
+                        This field cannot be longer than 28 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_shelfLifeDays">Shelf Life Days</label>
+                    <input type="number" class="form-control" name="shelfLifeDays" id="field_shelfLifeDays"
+                           formControlName="shelfLifeDays"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_serialNumberControl">Serial Number Control</label>
+                    <input type="text" class="form-control" name="serialNumberControl" id="field_serialNumberControl"
+                           formControlName="serialNumberControl"/>
+                    <div *ngIf="editForm.get('serialNumberControl')!.invalid && (editForm.get('serialNumberControl')!.dirty || editForm.get('serialNumberControl')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serialNumberControl')?.errors?.maxlength">
+                        This field cannot be longer than 34 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_unitVolume">Unit Volume</label>
+                    <input type="number" class="form-control" name="unitVolume" id="field_unitVolume"
+                           formControlName="unitVolume"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_volumeUnitOfMeasure">Volume Unit Of Measure</label>
+                    <input type="text" class="form-control" name="volumeUnitOfMeasure" id="field_volumeUnitOfMeasure"
+                           formControlName="volumeUnitOfMeasure"/>
+                    <div *ngIf="editForm.get('volumeUnitOfMeasure')!.invalid && (editForm.get('volumeUnitOfMeasure')!.dirty || editForm.get('volumeUnitOfMeasure')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('volumeUnitOfMeasure')?.errors?.maxlength">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_unitWeight">Unit Weight</label>
+                    <input type="number" class="form-control" name="unitWeight" id="field_unitWeight"
+                           formControlName="unitWeight"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_weightUnitOfMeasure">Weight Unit Of Measure</label>
+                    <input type="text" class="form-control" name="weightUnitOfMeasure" id="field_weightUnitOfMeasure"
+                           formControlName="weightUnitOfMeasure"/>
+                    <div *ngIf="editForm.get('weightUnitOfMeasure')!.invalid && (editForm.get('weightUnitOfMeasure')!.dirty || editForm.get('weightUnitOfMeasure')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('weightUnitOfMeasure')?.errors?.maxlength">
+                        This field cannot be longer than 2 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_unitsInABoxPackage">Units In A Box Package</label>
+                    <input type="number" class="form-control" name="unitsInABoxPackage" id="field_unitsInABoxPackage"
+                           formControlName="unitsInABoxPackage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_revisionControl">Revision Control</label>
+                    <input type="text" class="form-control" name="revisionControl" id="field_revisionControl"
+                           formControlName="revisionControl"/>
+                    <div *ngIf="editForm.get('revisionControl')!.invalid && (editForm.get('revisionControl')!.dirty || editForm.get('revisionControl')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('revisionControl')?.errors?.maxlength">
+                        This field cannot be longer than 6 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dimensionUnitHeight">Dimension Unit Height</label>
+                    <input type="number" class="form-control" name="dimensionUnitHeight" id="field_dimensionUnitHeight"
+                           formControlName="dimensionUnitHeight"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dimensionUnitLength">Dimension Unit Length</label>
+                    <input type="number" class="form-control" name="dimensionUnitLength" id="field_dimensionUnitLength"
+                           formControlName="dimensionUnitLength"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dimensionUnitWidth">Dimension Unit Width</label>
+                    <input type="number" class="form-control" name="dimensionUnitWidth" id="field_dimensionUnitWidth"
+                           formControlName="dimensionUnitWidth"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dimensionUnitOfMeasure">Dimension Unit Of Measure</label>
+                    <input type="text" class="form-control" name="dimensionUnitOfMeasure" id="field_dimensionUnitOfMeasure"
+                           formControlName="dimensionUnitOfMeasure"/>
+                    <div *ngIf="editForm.get('dimensionUnitOfMeasure')!.invalid && (editForm.get('dimensionUnitOfMeasure')!.dirty || editForm.get('dimensionUnitOfMeasure')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dimensionUnitOfMeasure')?.errors?.maxlength">
+                        This field cannot be longer than 2 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hazardousWeight">Hazardous Weight</label>
+                    <input type="text" class="form-control" name="hazardousWeight" id="field_hazardousWeight"
+                           formControlName="hazardousWeight"/>
+                    <div *ngIf="editForm.get('hazardousWeight')!.invalid && (editForm.get('hazardousWeight')!.dirty || editForm.get('hazardousWeight')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('hazardousWeight')?.errors?.maxlength">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_franceAbcPickingCategory">France Abc Picking Category</label>
+                    <input type="text" class="form-control" name="franceAbcPickingCategory" id="field_franceAbcPickingCategory"
+                           formControlName="franceAbcPickingCategory"/>
+                    <div *ngIf="editForm.get('franceAbcPickingCategory')!.invalid && (editForm.get('franceAbcPickingCategory')!.dirty || editForm.get('franceAbcPickingCategory')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('franceAbcPickingCategory')?.errors?.maxlength">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mdmTempConditionsCategory">Mdm Temp Conditions Category</label>
+                    <input type="text" class="form-control" name="mdmTempConditionsCategory" id="field_mdmTempConditionsCategory"
+                           formControlName="mdmTempConditionsCategory"/>
+                    <div *ngIf="editForm.get('mdmTempConditionsCategory')!.invalid && (editForm.get('mdmTempConditionsCategory')!.dirty || editForm.get('mdmTempConditionsCategory')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mdmTempConditionsCategory')?.errors?.maxlength">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_perishCodeCategory">Perish Code Category</label>
+                    <input type="text" class="form-control" name="perishCodeCategory" id="field_perishCodeCategory"
+                           formControlName="perishCodeCategory"/>
+                    <div *ngIf="editForm.get('perishCodeCategory')!.invalid && (editForm.get('perishCodeCategory')!.dirty || editForm.get('perishCodeCategory')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('perishCodeCategory')?.errors?.maxlength">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_unNumber">Un Number</label>
+                    <input type="text" class="form-control" name="unNumber" id="field_unNumber"
+                           formControlName="unNumber"/>
+                    <div *ngIf="editForm.get('unNumber')!.invalid && (editForm.get('unNumber')!.dirty || editForm.get('unNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('unNumber')?.errors?.maxlength">
+                        This field cannot be longer than 6 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hazardClass">Hazard Class</label>
+                    <input type="text" class="form-control" name="hazardClass" id="field_hazardClass"
+                           formControlName="hazardClass"/>
+                    <div *ngIf="editForm.get('hazardClass')!.invalid && (editForm.get('hazardClass')!.dirty || editForm.get('hazardClass')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('hazardClass')?.errors?.maxlength">
+                        This field cannot be longer than 4 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_unitOfIssue">Unit Of Issue</label>
+                    <input type="text" class="form-control" name="unitOfIssue" id="field_unitOfIssue"
+                           formControlName="unitOfIssue"/>
+                    <div *ngIf="editForm.get('unitOfIssue')!.invalid && (editForm.get('unitOfIssue')!.dirty || editForm.get('unitOfIssue')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('unitOfIssue')?.errors?.maxlength">
+                        This field cannot be longer than 2 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_roundingFactor">Rounding Factor</label>
+                    <input type="text" class="form-control" name="roundingFactor" id="field_roundingFactor"
+                           formControlName="roundingFactor"/>
+                    <div *ngIf="editForm.get('roundingFactor')!.invalid && (editForm.get('roundingFactor')!.dirty || editForm.get('roundingFactor')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roundingFactor')?.errors?.maxlength">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemBuyerName">Item Buyer Name</label>
+                    <input type="text" class="form-control" name="itemBuyerName" id="field_itemBuyerName"
+                           formControlName="itemBuyerName"/>
+                    <div *ngIf="editForm.get('itemBuyerName')!.invalid && (editForm.get('itemBuyerName')!.dirty || editForm.get('itemBuyerName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemBuyerName')?.errors?.maxlength">
+                        This field cannot be longer than 40 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hazardousWeightUom">Hazardous Weight Uom</label>
+                    <input type="text" class="form-control" name="hazardousWeightUom" id="field_hazardousWeightUom"
+                           formControlName="hazardousWeightUom"/>
+                    <div *ngIf="editForm.get('hazardousWeightUom')!.invalid && (editForm.get('hazardousWeightUom')!.dirty || editForm.get('hazardousWeightUom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('hazardousWeightUom')?.errors?.maxlength">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gphCode">Gph Code</label>
+                    <input type="text" class="form-control" name="gphCode" id="field_gphCode"
+                           formControlName="gphCode"/>
+                    <div *ngIf="editForm.get('gphCode')!.invalid && (editForm.get('gphCode')!.dirty || editForm.get('gphCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('gphCode')?.errors?.maxlength">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mos">Mos</label>
+                    <input type="text" class="form-control" name="mos" id="field_mos"
+                           formControlName="mos"/>
+                    <div *ngIf="editForm.get('mos')!.invalid && (editForm.get('mos')!.dirty || editForm.get('mos')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mos')?.errors?.maxlength">
+                        This field cannot be longer than 9 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lpnPackage">Lpn Package</label>
+                    <input type="text" class="form-control" name="lpnPackage" id="field_lpnPackage"
+                           formControlName="lpnPackage"/>
+                    <div *ngIf="editForm.get('lpnPackage')!.invalid && (editForm.get('lpnPackage')!.dirty || editForm.get('lpnPackage')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('lpnPackage')?.errors?.maxlength">
+                        This field cannot be longer than 3 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_qteUnitairePalette">Qte Unitaire Palette</label>
+                    <input type="number" class="form-control" name="qteUnitairePalette" id="field_qteUnitairePalette"
+                           formControlName="qteUnitairePalette"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeUm">Type Um</label>
+                    <input type="text" class="form-control" name="typeUm" id="field_typeUm"
+                           formControlName="typeUm"/>
+                    <div *ngIf="editForm.get('typeUm')!.invalid && (editForm.get('typeUm')!.dirty || editForm.get('typeUm')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('typeUm')?.errors?.maxlength">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hauteurUm">Hauteur Um</label>
+                    <input type="number" class="form-control" name="hauteurUm" id="field_hauteurUm"
+                           formControlName="hauteurUm"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_longueurUm">Longueur Um</label>
+                    <input type="number" class="form-control" name="longueurUm" id="field_longueurUm"
+                           formControlName="longueurUm"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_largeurUm">Largeur Um</label>
+                    <input type="number" class="form-control" name="largeurUm" id="field_largeurUm"
+                           formControlName="largeurUm"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_qteUnitaireCarton">Qte Unitaire Carton</label>
+                    <input type="number" class="form-control" name="qteUnitaireCarton" id="field_qteUnitaireCarton"
+                           formControlName="qteUnitaireCarton"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dimensionsUc">Dimensions Uc</label>
+                    <input type="text" class="form-control" name="dimensionsUc" id="field_dimensionsUc"
+                           formControlName="dimensionsUc"/>
+                    <div *ngIf="editForm.get('dimensionsUc')!.invalid && (editForm.get('dimensionsUc')!.dirty || editForm.get('dimensionsUc')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dimensionsUc')?.errors?.maxlength">
+                        This field cannot be longer than 18 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_specifications">Specifications</label>
+                    <input type="text" class="form-control" name="specifications" id="field_specifications"
+                           formControlName="specifications"/>
+                    <div *ngIf="editForm.get('specifications')!.invalid && (editForm.get('specifications')!.dirty || editForm.get('specifications')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('specifications')?.errors?.maxlength">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cadencePoste">Cadence Poste</label>
+                    <input type="text" class="form-control" name="cadencePoste" id="field_cadencePoste"
+                           formControlName="cadencePoste"/>
+                    <div *ngIf="editForm.get('cadencePoste')!.invalid && (editForm.get('cadencePoste')!.dirty || editForm.get('cadencePoste')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cadencePoste')?.errors?.maxlength">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pfse">Pfse</label>
+                    <input type="text" class="form-control" name="pfse" id="field_pfse"
+                           formControlName="pfse"/>
+                    <div *ngIf="editForm.get('pfse')!.invalid && (editForm.get('pfse')!.dirty || editForm.get('pfse')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pfse')?.errors?.maxlength">
+                        This field cannot be longer than 40 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rhenus">Rhenus</label>
+                    <input type="text" class="form-control" name="rhenus" id="field_rhenus"
+                           formControlName="rhenus"/>
+                    <div *ngIf="editForm.get('rhenus')!.invalid && (editForm.get('rhenus')!.dirty || editForm.get('rhenus')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('rhenus')?.errors?.maxlength">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testCapa">Test Capa</label>
+                    <input type="text" class="form-control" name="testCapa" id="field_testCapa"
+                           formControlName="testCapa"/>
+                    <div *ngIf="editForm.get('testCapa')!.invalid && (editForm.get('testCapa')!.dirty || editForm.get('testCapa')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('testCapa')?.errors?.maxlength">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_abc">Abc</label>
+                    <input type="text" class="form-control" name="abc" id="field_abc"
+                           formControlName="abc"/>
+                    <div *ngIf="editForm.get('abc')!.invalid && (editForm.get('abc')!.dirty || editForm.get('abc')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('abc')?.errors?.maxlength">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemCreationDate">Item Creation Date</label>
+                    <div class="input-group">
+                        <input id="field_itemCreationDate" type="text" class="form-control" name="itemCreationDate" ngbDatepicker #itemCreationDateDp="ngbDatepicker" formControlName="itemCreationDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="itemCreationDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_categorieNm">Categorie Nm</label>
+                    <input type="text" class="form-control" name="categorieNm" id="field_categorieNm"
+                           formControlName="categorieNm"/>
+                    <div *ngIf="editForm.get('categorieNm')!.invalid && (editForm.get('categorieNm')!.dirty || editForm.get('categorieNm')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('categorieNm')?.errors?.maxlength">
+                        This field cannot be longer than 30 characters.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

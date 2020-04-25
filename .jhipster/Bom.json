@@ -1,0 +1,65 @@
+{
+    "name": "Bom",
+    "fields": [
+        {
+            "fieldName": "itemNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": "18"
+        },
+        {
+            "fieldName": "bomOperationNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bomSequenceNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "componentNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": "18"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "bomYield",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "effDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "disDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200425142000",
+    "entityTableName": "bom",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

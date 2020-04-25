@@ -1,0 +1,122 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-bom-heading">Create or edit a Bom</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_itemNumber">Item Number</label>
+                    <input type="text" class="form-control" name="itemNumber" id="field_itemNumber"
+                           formControlName="itemNumber"/>
+                    <div *ngIf="editForm.get('itemNumber')!.invalid && (editForm.get('itemNumber')!.dirty || editForm.get('itemNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemNumber')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('itemNumber')?.errors?.maxlength">
+                        This field cannot be longer than 18 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bomOperationNumber">Bom Operation Number</label>
+                    <input type="number" class="form-control" name="bomOperationNumber" id="field_bomOperationNumber"
+                           formControlName="bomOperationNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bomSequenceNumber">Bom Sequence Number</label>
+                    <input type="number" class="form-control" name="bomSequenceNumber" id="field_bomSequenceNumber"
+                           formControlName="bomSequenceNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_componentNumber">Component Number</label>
+                    <input type="text" class="form-control" name="componentNumber" id="field_componentNumber"
+                           formControlName="componentNumber"/>
+                    <div *ngIf="editForm.get('componentNumber')!.invalid && (editForm.get('componentNumber')!.dirty || editForm.get('componentNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('componentNumber')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('componentNumber')?.errors?.maxlength">
+                        This field cannot be longer than 18 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_quantity">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="field_quantity"
+                           formControlName="quantity"/>
+                    <div *ngIf="editForm.get('quantity')!.invalid && (editForm.get('quantity')!.dirty || editForm.get('quantity')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('quantity')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('quantity')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bomYield">Bom Yield</label>
+                    <input type="number" class="form-control" name="bomYield" id="field_bomYield"
+                           formControlName="bomYield"/>
+                    <div *ngIf="editForm.get('bomYield')!.invalid && (editForm.get('bomYield')!.dirty || editForm.get('bomYield')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('bomYield')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('bomYield')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_effDate">Eff Date</label>
+                    <div class="input-group">
+                        <input id="field_effDate" type="text" class="form-control" name="effDate" ngbDatepicker #effDateDp="ngbDatepicker" formControlName="effDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="effDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_disDate">Dis Date</label>
+                    <div class="input-group">
+                        <input id="field_disDate" type="text" class="form-control" name="disDate" ngbDatepicker #disDateDp="ngbDatepicker" formControlName="disDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="disDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
